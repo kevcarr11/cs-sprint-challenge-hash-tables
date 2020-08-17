@@ -1,8 +1,28 @@
 def intersection(arrays):
     """
-    YOUR CODE HERE
+    for i in arrays = each index in arrays []. 
+    arrays = [           
+        index 0 [1, 2, 3, 4, 5],
+        index 1 [12, 7, 2, 9, 1],
+        index 2 [99, 2, 7, 1,]
+        ]
+    for j in i = need to go deeper to find each i of index
+        index 0 [1, 2, 3, 4, 5]
+            i = [0, 1, 2, 3, 4]
     """
-    # Your code here
+    cache = dict()
+    result = []
+
+    for i in arrays:
+        for j in i:
+            if j in cache:
+                cache[j] += 1
+            else:
+                cache[j] = 1
+    
+    for new_list in cache:
+        if cache[new_list] == len(arrays):
+            result.append(new_list)
 
     return result
 

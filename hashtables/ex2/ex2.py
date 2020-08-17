@@ -11,7 +11,7 @@ def reconstruct_trip(tickets, length):
     """
     hashmap = dict()
     route = [None] * length
-    
+
     for i in range(0, length):
         current = tickets[i]
         hashmap[current.source] = current.destination
@@ -29,10 +29,14 @@ def reconstruct_trip(tickets, length):
     return route
 
 
-ticket_1 = Ticket("NONE", "PDX")
-ticket_2 = Ticket("PDX", "DCA")
-ticket_3 = Ticket("DCA", "NONE")
 
-tickets = [ticket_1, ticket_2, ticket_3]
+if __name__ == "__main__":
+    arrays = []
 
-print(reconstruct_trip(tickets, 3))
+    ticket_1 = Ticket("NONE", "PDX")
+    ticket_2 = Ticket("PDX", "DCA")
+    ticket_3 = Ticket("DCA", "NONE")
+
+    tickets = [ticket_1, ticket_2, ticket_3]
+
+    print(reconstruct_trip(tickets, 3))
